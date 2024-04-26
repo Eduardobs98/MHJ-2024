@@ -797,6 +797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8060093167653531182}
+  - component: {fileID: 6212030316389746537}
   m_Layer: 0
   m_Name: MinijuegoGuitar
   m_TagString: Untagged
@@ -825,3 +826,16 @@ Transform:
   - {fileID: 1185002493103227157}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6212030316389746537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401524935494469906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa575e84fe65337498c0bdc93fbc55f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
