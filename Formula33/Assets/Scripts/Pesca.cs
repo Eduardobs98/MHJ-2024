@@ -19,7 +19,7 @@ public class Pesca : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        barra.value = 0.5f;
+        barra.value = 0;
         timerToFall = timeToFall;
         zonaBuena.rectTransform.localScale = new Vector3(1, tamanioZonaBuena, 1);
         zonaBuena.rectTransform.pivot =new Vector2(0.5f, Random.Range(0f,1f));
