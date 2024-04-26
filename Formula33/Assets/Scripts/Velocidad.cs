@@ -13,7 +13,7 @@ public class Velocidad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        barra.value = 0.5f;
+        barra.value = 0;
         timerToFall = timeToFall;
     }
 
