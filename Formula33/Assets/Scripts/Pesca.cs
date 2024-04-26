@@ -10,11 +10,28 @@ public class Pesca : MonoBehaviour
     public float subida;
     public float timeToFall;
     float timerToFall;
+    public RawImage zonaBuena;
+    public float tamanioZonaBuena;
+    float destino;
+    public float velMovimiento;
+    bool arriba;
+
     // Start is called before the first frame update
     void Start()
     {
         barra.value = 0.5f;
         timerToFall = timeToFall;
+        zonaBuena.rectTransform.localScale = new Vector3(1, tamanioZonaBuena, 1);
+        zonaBuena.rectTransform.pivot =new Vector2(0.5f, Random.Range(0f,1f));
+        destino = Random.Range(0f, 1f);
+        if(destino< zonaBuena.rectTransform.pivot.y)
+        {
+            arriba = false;
+        }
+        else
+        {
+            arriba = true;
+        }
     }
 
     // Update is called once per frame
@@ -23,12 +40,26 @@ public class Pesca : MonoBehaviour
         timerToFall -= Time.deltaTime;
         if(timerToFall <= 0)
         {
-            barra.value = Mathf.Lerp(barra.value, 0, velocidad / 1000);
+            barra.value = Mathf.Lerp(barra.value, 0, (velocidad )*Time.deltaTime);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             barra.value += subida / 100;
             timerToFall = timeToFall;
+        }
+        zonaBuena.rectTransform.pivot = new Vector2(0.5f, Mathf.Lerp(zonaBuena.rectTransform.pivot.y, destino, (velMovimiento) * Time.deltaTime));
+        if ((zonaBuena.rectTransform.pivot.y > destino-0.1f && arriba) || (zonaBuena.rectTransform.pivot.y < destino + 0.1f&& !arriba))
+        {
+            destino= Random.Range(0f, 1f);
+            if (destino < zonaBuena.rectTransform.pivot.y)
+            {
+                arriba = false;
+            }
+            else
+            {
+                arriba = true;
+            }
+            Debug.Log(destino);
         }
     }
 }
