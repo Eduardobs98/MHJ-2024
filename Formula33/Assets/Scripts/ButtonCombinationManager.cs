@@ -22,6 +22,7 @@ public class ButtonCombinationManager : MonoBehaviour
 
     public int completedCombinations = 0;
     public int maxCombinations = 4;
+    public miniGame minigame;
 
     private void Awake()
     {
@@ -129,7 +130,7 @@ public class ButtonCombinationManager : MonoBehaviour
         completedCombinations++;
         if(completedCombinations >= maxCombinations)
         {
-            Debug.Log("You Win");
+            minigame.Finished();
         } else
         {
             GenerateCombination();

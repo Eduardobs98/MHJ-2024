@@ -9,6 +9,7 @@ public class Velocidad : MonoBehaviour
     public float velocidad;
     public float subida;
     public float timeToFall;
+    public miniGame minigame;
     float timerToFall;
     // Start is called before the first frame update
     void Start()
@@ -30,5 +31,13 @@ public class Velocidad : MonoBehaviour
             barra.value += subida / 100;
             timerToFall = timeToFall;
         }
+        if (barra.value >= barra.maxValue)
+        {
+            WinGame();
+        }
+    }
+    void WinGame()
+    {
+        minigame.Finished();
     }
 }
