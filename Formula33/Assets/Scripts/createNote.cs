@@ -12,13 +12,34 @@ public class createNote : MonoBehaviour
     public List<Vector4> notas1;
     public List<Vector4> notas2;
     public List<GameObject> teclas;
-    public float timeBetweenNotes;
+    private float timeBetweenNotes;
     float timerBetweenNotes;
+    public miniGame minigame;
+    public int adaptableDifficulty;
+
+    public float timeBetweenNotesEasy;
+    public float timeBetweenNotesMedium;
+    public float timeBetweenNotesHard;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        adaptableDifficulty = minigame.controlador.adaptableDifficulty;
         timerBetweenNotes = 0;
+
+        if (adaptableDifficulty == 0)
+        {
+            timeBetweenNotes = timeBetweenNotesEasy;
+        }
+        else if (adaptableDifficulty == 1)
+        {
+            timeBetweenNotes = timeBetweenNotesMedium;
+        }
+        else if (adaptableDifficulty >= 2)
+        {
+            timeBetweenNotes = timeBetweenNotesHard;
+        }
     }
 
     // Update is called once per frame

@@ -11,13 +11,32 @@ public class guitar : MonoBehaviour
     public miniGame minigame;
     bool secondPlayer;
     int numNotas;
-    public int maxNotas;
+    private int maxNotas;
+    public int adaptableDifficulty;
+
+    public int maxNotasEasy;
+    public int maxNotasMedium;
+    public int maxNotasLarge;
 
     // Start is called before the first frame update
     void Start()
     {
         numNotas = 0;
         secondPlayer = minigame.controlador.secondPlayer;
+        adaptableDifficulty = minigame.controlador.adaptableDifficulty;
+
+        if (adaptableDifficulty == 0)
+        {
+            maxNotas = maxNotasEasy;
+        }
+        else if (adaptableDifficulty == 1)
+        {
+            maxNotas = maxNotasMedium;
+        }
+        else if (adaptableDifficulty >= 2)
+        {
+            maxNotas = maxNotasLarge;
+        }
     }
 
     // Update is called once per frame

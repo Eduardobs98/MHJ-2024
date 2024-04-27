@@ -29,9 +29,15 @@ public class ButtonCombinationManager : MonoBehaviour
     private int currentButtonIndex = 0;
 
     public int completedCombinations = 0;
-    public int maxCombinations = 4;
+    private int maxCombinations = 3;
+
+    public int maxCombinationsEasy = 3;
+    public int maxCombinationsMedum = 4;
+    public int maxCombinationsHard = 5;
+
     public miniGame minigame;
     bool secondPlayer;
+    public int adaptableDifficulty;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +47,19 @@ public class ButtonCombinationManager : MonoBehaviour
         if (secondPlayer)
             buttonTypes = buttonTypesP2;
         */
+        adaptableDifficulty = minigame.controlador.adaptableDifficulty;
+
+        if(adaptableDifficulty == 0)
+        {
+            maxCombinations = maxCombinationsEasy;
+        } else if (adaptableDifficulty == 1)
+        {
+            maxCombinations = maxCombinationsMedum;
+        } else if (adaptableDifficulty >= 2) 
+        {
+            maxCombinations = maxCombinationsHard;
+        }
+
         completedCombinations = 0;
         GenerateCombination();
     }
