@@ -106,14 +106,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357359994992772255}
-  m_LocalRotation: {x: 0, y: 0, z: 0.47508672, w: 0.87993896}
+  m_LocalRotation: {x: -0, y: -0, z: 0.8981944, w: -0.4395986}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6255500680029736600}
   m_Father: {fileID: 1792649705275051869}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 56.73}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -487.84302}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -333,14 +333,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113986528864414064}
-  m_LocalRotation: {x: 0, y: 0, z: -0.76068926, w: 0.6491163}
+  m_LocalRotation: {x: -0, y: -0, z: 0.96714884, w: 0.2542108}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7250665096657915688}
   m_Father: {fileID: 1792649705275051869}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -99.05}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 510.54602}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -490,14 +490,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3015450429976995116}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9979156, w: 0.06453241}
+  m_LocalRotation: {x: -0, y: -0, z: -0.48897132, w: -0.87229985}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.90000033, y: 0.90000033, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4816658229755409804}
   m_Father: {fileID: 1792649705275051869}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 172.6}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 418.546}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -606,7 +606,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8866699616379808329
 MonoBehaviour:
@@ -1010,8 +1010,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circulo: {fileID: 1111915557877803304}
-  velocidadRotacion: 100
   bmovil: {fileID: 1620845417546567796}
   maxpuntuacion: 3
-  speedMultiplier: 1
   minigame: {fileID: 4642649804518977617}
+  circulo1: {fileID: 357359994992772255}
+  circulo2: {fileID: 2113986528864414064}
+  circulo3: {fileID: 3015450429976995116}
+  preSets:
+  - {x: 56.63, y: -99.05, z: 172.6}
+  - {x: -120.89, y: 47.97, z: 112.7}
+  - {x: -367.2, y: 223.6, z: 148.98}
+  - {x: -268.65, y: 393.93, z: 209.52}
+  - {x: -487.84, y: 510.54, z: 418.54}
+  velocidadRotacionEasy: 100
+  speedMultiplierEasy: 1.2
+  velocidadRotacionMedium: 150
+  speedMultiplierMedium: 1.2
+  velocidadRotacionHard: 200
+  speedMultiplierHard: 1.2
+  adaptableDifficulty: 0
