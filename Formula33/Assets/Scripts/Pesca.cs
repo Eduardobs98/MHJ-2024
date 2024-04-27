@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Pesca : MonoBehaviour
 {
     public Slider barra;
-    public float velocidad;
-    public float subida;
+    public float velocidadBajada;
+    public float velocidadSubida;
     public float timeToFall;
     float timerToFall;
     public RawImage zonaBuena;
@@ -15,16 +15,22 @@ public class Pesca : MonoBehaviour
     float destino;
     public float velMovimiento;
     bool arriba;
+    public miniGame minigame;
+    bool secondPlayer;
+    public float timeToWin;
+    float timerToWin;
 
     // Start is called before the first frame update
     void Start()
     {
         barra.value = 0;
-        timerToFall = timeToFall;
+        timerToFall = 0;
+        timerToWin = 0;
         zonaBuena.rectTransform.localScale = new Vector3(1, tamanioZonaBuena, 1);
         zonaBuena.rectTransform.pivot =new Vector2(0.5f, Random.Range(0f,1f));
         destino = Random.Range(0f, 1f);
-        if(destino< zonaBuena.rectTransform.pivot.y)
+        secondPlayer = minigame.controlador.secondPlayer;
+        if (destino< zonaBuena.rectTransform.pivot.y)
         {
             arriba = false;
         }
@@ -40,17 +46,38 @@ public class Pesca : MonoBehaviour
         timerToFall -= Time.deltaTime;
         if(timerToFall <= 0)
         {
-            barra.value = Mathf.Lerp(barra.value, 0, (velocidad )*Time.deltaTime);
+            barra.value -= velocidadBajada*Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        else
         {
-            barra.value += subida / 100;
-            timerToFall = timeToFall;
+            barra.value += velocidadSubida * Time.deltaTime;
         }
-        zonaBuena.rectTransform.pivot = new Vector2(0.5f, Mathf.Lerp(zonaBuena.rectTransform.pivot.y, destino, (velMovimiento) * Time.deltaTime));
+        if (!secondPlayer)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                timerToFall = timeToFall;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                timerToFall = timeToFall;
+            }
+        }
+
+        if (arriba)
+        {
+            zonaBuena.rectTransform.pivot =new Vector2(0.5f, Mathf.Clamp(zonaBuena.rectTransform.pivot.y + ((velocidadSubida/2) * Time.deltaTime),0,1-(tamanioZonaBuena/2)));
+        }
+        else
+        {
+            zonaBuena.rectTransform.pivot = new Vector2(0.5f, Mathf.Clamp(zonaBuena.rectTransform.pivot.y - ((velocidadBajada/2) * Time.deltaTime), 0, 1 - (tamanioZonaBuena / 2)));
+        }
         if ((zonaBuena.rectTransform.pivot.y > destino-0.1f && arriba) || (zonaBuena.rectTransform.pivot.y < destino + 0.1f&& !arriba))
         {
-            destino= Random.Range(0f, 1f);
+            destino= Random.Range(0f, 1f- (tamanioZonaBuena / 2));
             if (destino < zonaBuena.rectTransform.pivot.y)
             {
                 arriba = false;
@@ -59,7 +86,19 @@ public class Pesca : MonoBehaviour
             {
                 arriba = true;
             }
-            Debug.Log(destino);
         }
+        if(barra.value>= zonaBuena.rectTransform.pivot.y-(tamanioZonaBuena / 2) && barra.value <= zonaBuena.rectTransform.pivot.y + (tamanioZonaBuena / 2))
+        {
+            timerToWin += Time.deltaTime;
+        }
+        if (timerToWin >= timeToWin)
+        {
+            WinGame();
+        }
+    }
+    void WinGame()
+    {
+        Debug.Log("Acabe");
+        minigame.Finished();
     }
 }

@@ -276,6 +276,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1104776914356170477, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
+      propertyPath: timeToWin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104776914356170477, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
+      propertyPath: timeToFall
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104776914356170477, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
+      propertyPath: velocidadBajada
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104776914356170477, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
+      propertyPath: velocidadSubida
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6111023819800389692, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
