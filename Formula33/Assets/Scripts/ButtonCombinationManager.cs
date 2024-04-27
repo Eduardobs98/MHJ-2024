@@ -19,6 +19,9 @@ public class ButtonCombinationManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> positions;
 
+    [SerializeField]
+    private int numberOfButtons = 4;
+
     private int nextNumberInCombination = 0;
 
     private ButtonOfButtonCombination currentButton;
@@ -144,7 +147,7 @@ public class ButtonCombinationManager : MonoBehaviour
     public void GenerateCombination ()
     {
         DeleteOldCombination();
-        for (int i = 0; i < positions.Count; i++)
+        for (int i = 0; i < numberOfButtons; i++)
         {
             
             nextNumberInCombination = Random.Range(0, 4);

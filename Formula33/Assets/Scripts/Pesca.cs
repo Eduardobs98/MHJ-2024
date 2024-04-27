@@ -69,11 +69,11 @@ public class Pesca : MonoBehaviour
 
         if (arriba)
         {
-            zonaBuena.rectTransform.pivot =new Vector2(0.5f, Mathf.Clamp(zonaBuena.rectTransform.pivot.y + ((velocidadSubida/2) * Time.deltaTime),0,1-(tamanioZonaBuena/2)));
+            zonaBuena.rectTransform.pivot =new Vector2(0.5f, Mathf.Clamp(zonaBuena.rectTransform.pivot.y + ((velMovimiento / 2) * Time.deltaTime),0,1-(tamanioZonaBuena/2)));
         }
         else
         {
-            zonaBuena.rectTransform.pivot = new Vector2(0.5f, Mathf.Clamp(zonaBuena.rectTransform.pivot.y - ((velocidadBajada/2) * Time.deltaTime), 0, 1 - (tamanioZonaBuena / 2)));
+            zonaBuena.rectTransform.pivot = new Vector2(0.5f, Mathf.Clamp(zonaBuena.rectTransform.pivot.y - ((velMovimiento / 2) * Time.deltaTime), 0, 1 - (tamanioZonaBuena / 2)));
         }
         if ((zonaBuena.rectTransform.pivot.y > destino-0.1f && arriba) || (zonaBuena.rectTransform.pivot.y < destino + 0.1f&& !arriba))
         {
