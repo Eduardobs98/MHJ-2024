@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Velocidad : MonoBehaviour
 {
     public Slider barra;
-    public float velocidad;
-    public float subida;
+    public float velocidadBajada;
+    public float velocidadSubida;
     public float timeToFall;
     public miniGame minigame;
     float timerToFall;
@@ -15,10 +15,9 @@ public class Velocidad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        secondPlayer = minigame.controlador.secondPlayer;
         barra.value = 0;
-        timerToFall = timeToFall;
-        
+        secondPlayer = minigame.controlador.secondPlayer;
+        timerToFall = 0;
     }
 
     // Update is called once per frame
@@ -27,13 +26,16 @@ public class Velocidad : MonoBehaviour
         timerToFall -= Time.deltaTime;
         if (timerToFall <= 0)
         {
-            barra.value = Mathf.Lerp(barra.value, 0, (velocidad) * Time.deltaTime);
+            barra.value -= velocidadBajada * Time.deltaTime;
+        }
+        else
+        {
+            barra.value += velocidadSubida * Time.deltaTime;
         }
         if (!secondPlayer)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                barra.value += subida / 100;
                 timerToFall = timeToFall;
             }
         }
@@ -41,7 +43,6 @@ public class Velocidad : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                barra.value += subida / 100;
                 timerToFall = timeToFall;
             }
         }

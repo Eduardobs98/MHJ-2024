@@ -10,10 +10,13 @@ public class guitar : MonoBehaviour
     public teclasPulsables tecla4;
     public miniGame minigame;
     bool secondPlayer;
+    int numNotas;
+    public int maxNotas;
 
     // Start is called before the first frame update
     void Start()
     {
+        numNotas = 0;
         secondPlayer = minigame.controlador.secondPlayer;
     }
 
@@ -27,6 +30,7 @@ public class guitar : MonoBehaviour
                 if (tecla1.hayNota == true)
                 {
                     Destroy(tecla1.nota);
+                    numNotas++;
                 }
             }
             if (Input.GetKeyDown(KeyCode.W))
@@ -34,6 +38,7 @@ public class guitar : MonoBehaviour
                 if (tecla2.hayNota == true)
                 {
                     Destroy(tecla2.nota);
+                    numNotas++;
                 }
             }
             if (Input.GetKeyDown(KeyCode.S))
@@ -41,6 +46,7 @@ public class guitar : MonoBehaviour
                 if (tecla3.hayNota == true)
                 {
                     Destroy(tecla3.nota);
+                    numNotas++;
                 }
             }
             if (Input.GetKeyDown(KeyCode.D))
@@ -48,6 +54,7 @@ public class guitar : MonoBehaviour
                 if (tecla4.hayNota == true)
                 {
                     Destroy(tecla4.nota);
+                    numNotas++;
                 }
             }
         }
@@ -58,6 +65,7 @@ public class guitar : MonoBehaviour
                 if (tecla1.hayNota == true)
                 {
                     Destroy(tecla1.nota);
+                    numNotas++;
                 }
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -65,6 +73,7 @@ public class guitar : MonoBehaviour
                 if (tecla2.hayNota == true)
                 {
                     Destroy(tecla2.nota);
+                    numNotas++;
                 }
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -72,6 +81,7 @@ public class guitar : MonoBehaviour
                 if (tecla3.hayNota == true)
                 {
                     Destroy(tecla3.nota);
+                    numNotas++;
                 }
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -79,9 +89,17 @@ public class guitar : MonoBehaviour
                 if (tecla4.hayNota == true)
                 {
                     Destroy(tecla4.nota);
+                    numNotas++;
                 }
             }
         }
-        
+        if (numNotas >= maxNotas)
+        {
+            WinGame();
+        }
+    }
+    void WinGame()
+    {
+        minigame.Finished();
     }
 }

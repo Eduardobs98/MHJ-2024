@@ -320,6 +320,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinijuegoVelocidad
       objectReference: {fileID: 0}
+    - target: {fileID: 9214295149033436554, guid: 8e99ff01dd7a22e48a6b6913f7f1bfa5, type: 3}
+      propertyPath: timeToFall
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214295149033436554, guid: 8e99ff01dd7a22e48a6b6913f7f1bfa5, type: 3}
+      propertyPath: velocidadBajada
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214295149033436554, guid: 8e99ff01dd7a22e48a6b6913f7f1bfa5, type: 3}
+      propertyPath: velocidadSubida
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
