@@ -185,7 +185,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &2726975796061042020
 MonoBehaviour:
@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barra: {fileID: 3996955489693607497}
-  velocidad: 1
-  subida: 5
+  velocidadBajada: 0
+  velocidadSubida: 0
   timeToFall: 0.2
   minigame: {fileID: 8846073731922670507}
 --- !u!1 &8136119509948831582
