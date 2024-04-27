@@ -219,13 +219,18 @@ MonoBehaviour:
   nota3: {fileID: 3693641748625430649}
   nota4: {fileID: 5484509042384217792}
   tecla: {fileID: 4105944603151659537, guid: 74a1bb0a20213ea41b29de8d154095b6, type: 3}
-  notas:
+  notas1:
   - {x: 1, y: 0, z: 0, w: 0}
   - {x: 0, y: 1, z: 0, w: 0}
   - {x: 0, y: 0, z: 1, w: 0}
   - {x: 0, y: 0, z: 0, w: 1}
+  notas2:
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 0, z: 1, w: 0}
+  - {x: 1, y: 0, z: 0, w: 1}
   - {x: 0, y: 1, z: 1, w: 0}
-  - {x: 1, y: 1, z: 1, w: 1}
+  - {x: 0, y: 1, z: 0, w: 1}
+  - {x: 0, y: 0, z: 1, w: 1}
   timeBetweenNotes: 2
 --- !u!1 &2141071954629316544
 GameObject:
@@ -696,6 +701,7 @@ MonoBehaviour:
   tecla3: {fileID: 8324830685405978612}
   tecla4: {fileID: 5286714302115300675}
   minigame: {fileID: 6212030316389746537}
+  maxNotas: 0
 --- !u!1 &7636064708495263031
 GameObject:
   m_ObjectHideFlags: 0

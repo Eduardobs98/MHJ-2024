@@ -9,14 +9,15 @@ public class createNote : MonoBehaviour
     public Transform nota3;
     public Transform nota4;
     public GameObject tecla;
-    public List<Vector4> notas;
+    public List<Vector4> notas1;
+    public List<Vector4> notas2;
     public float timeBetweenNotes;
     float timerBetweenNotes;
 
     // Start is called before the first frame update
     void Start()
     {
-        timerBetweenNotes = timeBetweenNotes;
+        timerBetweenNotes = 0;
     }
 
     // Update is called once per frame
@@ -25,12 +26,19 @@ public class createNote : MonoBehaviour
         timerBetweenNotes -= Time.deltaTime;
         if (timerBetweenNotes <= 0)
         {
-            Debug.Log("Saco tecla");
             timerBetweenNotes = timeBetweenNotes;
-            if(notas.Count >=1)
+            if(notas1.Count >=1 && notas2.Count >=1)
             {
-                mirarTeclas(notas[0]);
-                notas.RemoveAt(0);
+                int cual;
+                cual = Random.Range(1, 3);
+                if (cual == 1)
+                {
+                    mirarTeclas(notas1[Random.Range(0,notas1.Count)]);
+                }
+                else
+                {
+                    mirarTeclas(notas2[Random.Range(0, notas2.Count)]);
+                }
             }
         }
     }
