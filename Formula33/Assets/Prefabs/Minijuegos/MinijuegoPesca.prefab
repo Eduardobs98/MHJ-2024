@@ -123,6 +123,7 @@ MonoBehaviour:
   zonaBuena: {fileID: 7556496464970701215}
   tamanioZonaBuena: 0.2
   velMovimiento: 1
+  minigame: {fileID: 3688197049401391858}
 --- !u!1 &2616547771041524166
 GameObject:
   m_ObjectHideFlags: 0

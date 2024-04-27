@@ -31,7 +31,7 @@ public class Velocidad : MonoBehaviour
         }
         if (!secondPlayer)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 barra.value += subida / 100;
                 timerToFall = timeToFall;
