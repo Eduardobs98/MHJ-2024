@@ -10,8 +10,8 @@ public class ButtonCombinationManager : MonoBehaviour
     [SerializeField]
     private List<ButtonOfButtonCombination> buttonTypes;
 
-    [SerializeField]
-    private List<ButtonOfButtonCombination> buttonTypesP2;
+    //[SerializeField]
+    //private List<ButtonOfButtonCombination> buttonTypesP2;
 
     [SerializeField]
     private List<ButtonOfButtonCombination> currentButtonCombination;
@@ -34,8 +34,10 @@ public class ButtonCombinationManager : MonoBehaviour
     void Start()
     {
         secondPlayer = minigame.controlador.secondPlayer;
+        /*
         if (secondPlayer)
             buttonTypes = buttonTypesP2;
+        */
         completedCombinations = 0;
         GenerateCombination();
     }

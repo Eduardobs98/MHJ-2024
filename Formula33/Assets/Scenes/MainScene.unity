@@ -154,9 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigames:
   - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
-  - {fileID: 6212030316389746537, guid: c14f8df4b9a659f42b7ef00063b50fe8, type: 3}
-  - {fileID: 3688197049401391858, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
-  - {fileID: 8846073731922670507, guid: 8e99ff01dd7a22e48a6b6913f7f1bfa5, type: 3}
+  - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
   miniGameSpawn: {fileID: 589580262}
   secondPlayer: 1
 --- !u!4 &589580262
@@ -678,9 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigames:
   - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
-  - {fileID: 6212030316389746537, guid: c14f8df4b9a659f42b7ef00063b50fe8, type: 3}
-  - {fileID: 3688197049401391858, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
-  - {fileID: 8846073731922670507, guid: 8e99ff01dd7a22e48a6b6913f7f1bfa5, type: 3}
+  - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
   miniGameSpawn: {fileID: 1541952001}
   secondPlayer: 0
 --- !u!4 &1541952001
