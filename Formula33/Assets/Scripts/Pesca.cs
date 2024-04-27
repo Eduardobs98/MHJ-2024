@@ -13,6 +13,7 @@ public class Pesca : MonoBehaviour
     public miniGame minigame;
     bool secondPlayer;
     float timerToWin;
+    public Image gasofa;
 
     private float velocidadBajada;
     private float velocidadSubida;
@@ -149,11 +150,13 @@ public class Pesca : MonoBehaviour
         if(barra.value>= zonaBuena.rectTransform.pivot.y-(tamanioZonaBuena / 2) && barra.value <= zonaBuena.rectTransform.pivot.y + (tamanioZonaBuena / 2))
         {
             timerToWin += Time.deltaTime;
+            gasofa.fillAmount = timerToWin / timeToWin;
         }
         if (timerToWin >= timeToWin)
         {
             WinGame();
         }
+        
     }
     void WinGame()
     {
