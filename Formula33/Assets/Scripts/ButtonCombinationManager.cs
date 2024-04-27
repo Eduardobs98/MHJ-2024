@@ -19,6 +19,11 @@ public class ButtonCombinationManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> positions;
 
+    public List<GameObject> positionsEasy;
+    public List<GameObject> positionsMedium;
+    public List<GameObject> positionsHard;
+
+
     [SerializeField]
     private int numberOfButtons = 4;
 
@@ -37,7 +42,7 @@ public class ButtonCombinationManager : MonoBehaviour
 
     public miniGame minigame;
     bool secondPlayer;
-    public int adaptableDifficulty;
+    public int adaptableDifficulty = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -52,14 +57,17 @@ public class ButtonCombinationManager : MonoBehaviour
         if(adaptableDifficulty == 0)
         {
             maxCombinations = maxCombinationsEasy;
+            positions = positionsEasy;
         } else if (adaptableDifficulty == 1)
         {
             maxCombinations = maxCombinationsMedum;
-        } else if (adaptableDifficulty >= 2) 
+            positions = positionsMedium;
+        } else if (adaptableDifficulty >= 2)
         {
             maxCombinations = maxCombinationsHard;
+            positions = positionsHard;
         }
-
+        numberOfButtons = positions.Count;
         completedCombinations = 0;
         GenerateCombination();
     }
