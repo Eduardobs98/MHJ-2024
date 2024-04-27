@@ -272,10 +272,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barra: {fileID: 3996955489693607497}
-  velocidadBajada: 1
-  velocidadSubida: 0.5
-  timeToFall: 0.15
+  velocidadSubidaEasy: 0.5
+  velocidadBajadaEasy: 1
+  timeToFallEasy: 0.15
+  velocidadSubidaMedium: 0.4
+  velocidadBajadaMedium: 1
+  timeToFallMedium: 0.15
+  velocidadSubidaHard: 0.2
+  velocidadBajadaHard: 1
+  timeToFallHard: 0.15
   minigame: {fileID: 8846073731922670507}
+  adaptableDifficulty: 0
 --- !u!1 &8136119509948831582
 GameObject:
   m_ObjectHideFlags: 0

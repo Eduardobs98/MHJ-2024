@@ -6,23 +6,79 @@ using UnityEngine.UI;
 public class Pesca : MonoBehaviour
 {
     public Slider barra;
-    public float velocidadBajada;
-    public float velocidadSubida;
-    public float timeToFall;
     float timerToFall;
     public RawImage zonaBuena;
-    public float tamanioZonaBuena;
     float destino;
-    public float velMovimiento;
     bool arriba;
     public miniGame minigame;
     bool secondPlayer;
-    public float timeToWin;
     float timerToWin;
+
+    private float velocidadBajada;
+    private float velocidadSubida;
+    private float timeToFall;
+    private float tamanioZonaBuena;
+    private float velMovimiento;
+    private float timeToWin;
+
+    public float velocidadBajadaEasy;
+    public float velocidadSubidaEasy;
+    public float timeToFallEasy;
+    public float tamanioZonaBuenaEasy;
+    public float velMovimientoEasy;
+    public float timeToWinEasy;
+
+    public float velocidadBajadaMedium;
+    public float velocidadSubidaMedium;
+    public float timeToFallMedium;
+    public float tamanioZonaBuenaMedium;
+    public float velMovimientoMedium;
+    public float timeToWinMedium;
+
+    public float velocidadBajadaHard;
+    public float velocidadSubidaHard;
+    public float timeToFallHard;
+    public float tamanioZonaBuenaHard;
+    public float velMovimientoHard;
+    public float timeToWinHard;
+    public int adaptableDifficulty;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        adaptableDifficulty = minigame.controlador.adaptableDifficulty;
+
+        if (adaptableDifficulty == 0)
+        {
+            velocidadBajada = velocidadBajadaEasy;
+            velocidadSubida = velocidadSubidaEasy;
+            timeToFall = timeToFallEasy;
+            tamanioZonaBuena = tamanioZonaBuenaEasy;
+            velMovimiento = velMovimientoEasy;
+            timeToWin = timeToWinEasy;
+        }
+        else if (adaptableDifficulty == 1)
+        {
+            velocidadBajada = velocidadBajadaMedium;
+            velocidadSubida = velocidadSubidaMedium;
+            timeToFall = timeToFallMedium;
+            tamanioZonaBuena = tamanioZonaBuenaMedium;
+            velMovimiento = velMovimientoMedium;
+            timeToWin = timeToWinMedium;
+        }
+        else if (adaptableDifficulty >= 2)
+        {
+            velocidadBajada = velocidadBajadaHard;
+            velocidadSubida = velocidadSubidaHard;
+            timeToFall = timeToFallHard;
+            tamanioZonaBuena = tamanioZonaBuenaHard;
+            velMovimiento = velMovimientoHard;
+            timeToWin = timeToWinHard;
+        }
+
+
         barra.value = 0;
         timerToFall = 0;
         timerToWin = 0;
@@ -38,6 +94,9 @@ public class Pesca : MonoBehaviour
         {
             arriba = true;
         }
+
+
+
     }
 
     // Update is called once per frame

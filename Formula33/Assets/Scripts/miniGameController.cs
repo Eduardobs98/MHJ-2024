@@ -10,6 +10,8 @@ public class miniGameController : MonoBehaviour
     miniGame currentMinigame;
     int indice = 0;
     public bool secondPlayer;
+    public int adaptableDifficulty; //0 = easy, 1 = medium, 2 = difficult
+
     public TMP_Text puntuacion;
     int puntos;
     // Start is called before the first frame update

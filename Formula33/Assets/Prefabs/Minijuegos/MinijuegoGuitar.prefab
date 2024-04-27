@@ -101,7 +101,11 @@ MonoBehaviour:
   - {fileID: 4105944603151659537, guid: 39b84daf9dc3331499a117682f4bcfc5, type: 3}
   - {fileID: 4105944603151659537, guid: 3ca3856b345bb9842893f11d5c6dfb75, type: 3}
   - {fileID: 4105944603151659537, guid: 77c25ea462ba5f14fbf7e2229e1b4049, type: 3}
-  timeBetweenNotes: 1
+  minigame: {fileID: 6212030316389746537}
+  adaptableDifficulty: 0
+  timeBetweenNotesEasy: 1
+  timeBetweenNotesMedium: 0.8
+  timeBetweenNotesHard: 0.6
 --- !u!1 &2370052169921999726
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +577,10 @@ MonoBehaviour:
   tecla3: {fileID: 4623566729114448080}
   tecla4: {fileID: 3839676661088982655}
   minigame: {fileID: 6212030316389746537}
-  maxNotas: 10
+  adaptableDifficulty: 0
+  maxNotasEasy: 10
+  maxNotasMedium: 15
+  maxNotasLarge: 20
 --- !u!82 &6377826191058386724
 AudioSource:
   m_ObjectHideFlags: 0
