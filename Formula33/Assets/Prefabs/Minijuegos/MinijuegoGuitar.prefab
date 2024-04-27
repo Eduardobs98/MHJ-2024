@@ -695,6 +695,7 @@ MonoBehaviour:
   tecla2: {fileID: 2689529669487591929}
   tecla3: {fileID: 8324830685405978612}
   tecla4: {fileID: 5286714302115300675}
+  minigame: {fileID: 6212030316389746537}
 --- !u!1 &7636064708495263031
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,3 +840,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  controlador: {fileID: 0}

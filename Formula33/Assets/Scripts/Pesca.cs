@@ -15,6 +15,8 @@ public class Pesca : MonoBehaviour
     float destino;
     public float velMovimiento;
     bool arriba;
+    public miniGame minigame;
+    bool secondPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,8 @@ public class Pesca : MonoBehaviour
         zonaBuena.rectTransform.localScale = new Vector3(1, tamanioZonaBuena, 1);
         zonaBuena.rectTransform.pivot =new Vector2(0.5f, Random.Range(0f,1f));
         destino = Random.Range(0f, 1f);
-        if(destino< zonaBuena.rectTransform.pivot.y)
+        secondPlayer = minigame.controlador.secondPlayer;
+        if (destino< zonaBuena.rectTransform.pivot.y)
         {
             arriba = false;
         }
@@ -42,11 +45,23 @@ public class Pesca : MonoBehaviour
         {
             barra.value = Mathf.Lerp(barra.value, 0, (velocidad )*Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!secondPlayer)
         {
-            barra.value += subida / 100;
-            timerToFall = timeToFall;
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                barra.value += subida / 100;
+                timerToFall = timeToFall;
+            }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                barra.value += subida / 100;
+                timerToFall = timeToFall;
+            }
+        }
+        
         zonaBuena.rectTransform.pivot = new Vector2(0.5f, Mathf.Lerp(zonaBuena.rectTransform.pivot.y, destino, (velMovimiento) * Time.deltaTime));
         if ((zonaBuena.rectTransform.pivot.y > destino-0.1f && arriba) || (zonaBuena.rectTransform.pivot.y < destino + 0.1f&& !arriba))
         {
