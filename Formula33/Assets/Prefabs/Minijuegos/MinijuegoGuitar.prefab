@@ -96,7 +96,11 @@ MonoBehaviour:
   - {x: 0, y: 1, z: 1, w: 0}
   - {x: 0, y: 1, z: 0, w: 1}
   - {x: 0, y: 0, z: 1, w: 1}
-  teclas: []
+  teclas:
+  - {fileID: 4105944603151659537, guid: 70b826d328afdf5478cc056c4415dce9, type: 3}
+  - {fileID: 4105944603151659537, guid: 39b84daf9dc3331499a117682f4bcfc5, type: 3}
+  - {fileID: 4105944603151659537, guid: 3ca3856b345bb9842893f11d5c6dfb75, type: 3}
+  - {fileID: 4105944603151659537, guid: 77c25ea462ba5f14fbf7e2229e1b4049, type: 3}
   timeBetweenNotes: 2
 --- !u!1 &2370052169921999726
 GameObject:
