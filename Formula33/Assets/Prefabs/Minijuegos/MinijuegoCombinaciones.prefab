@@ -141,8 +141,9 @@ MonoBehaviour:
   - {fileID: 7426480769492886308}
   - {fileID: 3892992513643808740}
   - {fileID: 9148532409180903035}
+  numberOfButtons: 4
   completedCombinations: 0
-  maxCombinations: 4
+  maxCombinations: 3
   minigame: {fileID: 1234654355264751459}
 --- !u!1 &3892992513643808740
 GameObject:

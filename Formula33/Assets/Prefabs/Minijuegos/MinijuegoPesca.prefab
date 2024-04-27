@@ -117,14 +117,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barra: {fileID: 9167464753175052325}
-  velocidadBajada: 1
-  velocidadSubida: 1
-  timeToFall: 0.2
+  velocidadBajada: 0.5
+  velocidadSubida: 0.5
+  timeToFall: 0.15
   zonaBuena: {fileID: 7556496464970701215}
   tamanioZonaBuena: 0.2
-  velMovimiento: 1
+  velMovimiento: 0.5
   minigame: {fileID: 3688197049401391858}
-  timeToWin: 3
+  timeToWin: 2
 --- !u!1 &2616547771041524166
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +457,7 @@ Transform:
   m_Children:
   - {fileID: 6997240824649847714}
   - {fileID: 5621791993907210358}
+  - {fileID: 7899683783459266007}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3688197049401391858
@@ -473,3 +474,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   controlador: {fileID: 0}
+--- !u!1 &8866808512937718809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7899683783459266007}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7899683783459266007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866808512937718809}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6111023819800389692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
