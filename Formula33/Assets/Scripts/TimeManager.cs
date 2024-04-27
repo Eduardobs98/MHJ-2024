@@ -86,7 +86,7 @@ public class TimeManager : MonoBehaviour
 
         if(seAcabo)
         {
-            if(Input.anyKeyDown) {
+            if(Input.GetKeyDown(KeyCode.Return)) {
                 SceneManager.LoadScene("MainMenu");
             }
         }
