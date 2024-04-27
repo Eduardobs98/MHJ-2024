@@ -5,6 +5,8 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using System;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -30,6 +32,9 @@ public class TimeManager : MonoBehaviour
 
     public int puntosPlayer1 = 0;
     public int puntosPlayer2 = 0;
+
+    public bool seAcabo = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,14 +47,14 @@ public class TimeManager : MonoBehaviour
 
         timer -= Time.deltaTime;
 
-        if (timer <= 0.0f)
+        if (timer <= 0.0f && !seAcabo)
         {
-            Debug.Log("SE ACABO");
+            seAcabo = true;
             winnerPannel.SetActive(true);
             puntosPlayer1 = player1Controller.puntos;
             puntosPlayer2 = player2Controller.puntos;
-            
-            if(puntosPlayer1 > puntosPlayer2)
+
+            if (puntosPlayer1 > puntosPlayer2)
             {
                 P1Win.SetActive(true);
                 P2Win.SetActive(false);
@@ -76,6 +81,13 @@ public class TimeManager : MonoBehaviour
 
                 DrawPointsPlayer1.text = puntosPlayer1.ToString();
                 DrawPointsPlayer2.text = puntosPlayer2.ToString();
+            }
+        }
+
+        if(seAcabo)
+        {
+            if(Input.GetKeyDown(KeyCode.KeypadEnter)) {
+                SceneManager.LoadScene("MainMenu");
             }
         }
 
