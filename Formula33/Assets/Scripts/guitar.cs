@@ -8,10 +8,6 @@ public class guitar : MonoBehaviour
     public teclasPulsables tecla2;
     public teclasPulsables tecla3;
     public teclasPulsables tecla4;
-    public teclasPulsables tecla12;
-    public teclasPulsables tecla22;
-    public teclasPulsables tecla32;
-    public teclasPulsables tecla42;
     public miniGame minigame;
     bool secondPlayer;
     int numNotas;
@@ -22,28 +18,6 @@ public class guitar : MonoBehaviour
     {
         numNotas = 0;
         secondPlayer = minigame.controlador.secondPlayer;
-        if (!secondPlayer)
-        {
-            tecla1.gameObject.SetActive(true);
-            tecla2.gameObject.SetActive(true);
-            tecla3.gameObject.SetActive(true);
-            tecla4.gameObject.SetActive(true);
-            tecla12.gameObject.SetActive(false);
-            tecla22.gameObject.SetActive(false);
-            tecla32.gameObject.SetActive(false);
-            tecla42.gameObject.SetActive(false);
-        }
-        else
-        {
-            tecla1.gameObject.SetActive(false);
-            tecla2.gameObject.SetActive(false);
-            tecla3.gameObject.SetActive(false);
-            tecla4.gameObject.SetActive(false);
-            tecla12.gameObject.SetActive(true);
-            tecla22.gameObject.SetActive(true);
-            tecla32.gameObject.SetActive(true);
-            tecla42.gameObject.SetActive(true);
-        }
     }
 
     // Update is called once per frame
@@ -90,7 +64,7 @@ public class guitar : MonoBehaviour
             {
                 if (tecla1.hayNota == true)
                 {
-                    Destroy(tecla12.nota);
+                    Destroy(tecla1.nota);
                     numNotas++;
                 }
             }
@@ -98,7 +72,7 @@ public class guitar : MonoBehaviour
             {
                 if (tecla2.hayNota == true)
                 {
-                    Destroy(tecla22.nota);
+                    Destroy(tecla2.nota);
                     numNotas++;
                 }
             }
@@ -106,7 +80,7 @@ public class guitar : MonoBehaviour
             {
                 if (tecla3.hayNota == true)
                 {
-                    Destroy(tecla32.nota);
+                    Destroy(tecla3.nota);
                     numNotas++;
                 }
             }
@@ -114,7 +88,7 @@ public class guitar : MonoBehaviour
             {
                 if (tecla4.hayNota == true)
                 {
-                    Destroy(tecla42.nota);
+                    Destroy(tecla4.nota);
                     numNotas++;
                 }
             }
