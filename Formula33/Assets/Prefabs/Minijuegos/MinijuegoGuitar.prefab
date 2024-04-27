@@ -101,7 +101,7 @@ MonoBehaviour:
   - {fileID: 4105944603151659537, guid: 39b84daf9dc3331499a117682f4bcfc5, type: 3}
   - {fileID: 4105944603151659537, guid: 3ca3856b345bb9842893f11d5c6dfb75, type: 3}
   - {fileID: 4105944603151659537, guid: 77c25ea462ba5f14fbf7e2229e1b4049, type: 3}
-  timeBetweenNotes: 2
+  timeBetweenNotes: 1
 --- !u!1 &2370052169921999726
 GameObject:
   m_ObjectHideFlags: 0

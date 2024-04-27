@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barra: {fileID: 9167464753175052325}
-  velocidadBajada: 0
-  velocidadSubida: 0
+  velocidadBajada: 1
+  velocidadSubida: 1
   timeToFall: 0.2
   zonaBuena: {fileID: 7556496464970701215}
   tamanioZonaBuena: 0.2

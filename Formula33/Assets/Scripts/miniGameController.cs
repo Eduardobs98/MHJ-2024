@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class miniGameController : MonoBehaviour
 {
@@ -9,12 +10,15 @@ public class miniGameController : MonoBehaviour
     miniGame currentMinigame;
     int indice = 0;
     public bool secondPlayer;
+    public TMP_Text puntuacion;
+    int puntos;
     // Start is called before the first frame update
     private void Awake()
     {
         indice = Random.Range(0, minigames.Count);
         Debug.Log(indice);
         InstantiateMiniGame();
+        puntos = 0;
     }
     void Start()
     {
@@ -43,5 +47,7 @@ public class miniGameController : MonoBehaviour
     {
         Destroy(currentMinigame.gameObject);
         NextMiniGame();
+        puntos++;
+        puntuacion.text = puntos.ToString();
     }
 }
