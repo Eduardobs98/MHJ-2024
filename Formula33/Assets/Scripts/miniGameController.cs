@@ -13,6 +13,7 @@ public class miniGameController : MonoBehaviour
     private void Awake()
     {
         indice = Random.Range(0, minigames.Count);
+        Debug.Log(indice);
         InstantiateMiniGame();
     }
     void Start()
@@ -40,7 +41,7 @@ public class miniGameController : MonoBehaviour
     }
     public void EndMinigame()
     {
-        Destroy(currentMinigame);
+        Destroy(currentMinigame.gameObject);
         NextMiniGame();
     }
 }

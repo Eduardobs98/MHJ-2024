@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &589580260
+--- !u!1 &23569838
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,8 +131,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 589580262}
-  - component: {fileID: 589580261}
+  - component: {fileID: 23569839}
+  - component: {fileID: 23569840}
   m_Layer: 0
   m_Name: MinijuegosP2
   m_TagString: Untagged
@@ -140,13 +140,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &589580261
+--- !u!4 &23569839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23569838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.86, y: 3.08, z: 0.9783174}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &23569840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589580260}
+  m_GameObject: {fileID: 23569838}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95164bf260973a24ca165f00e7ac605f, type: 3}
@@ -154,24 +169,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigames:
   - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
-  - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
-  miniGameSpawn: {fileID: 589580262}
+  - {fileID: 6212030316389746537, guid: c14f8df4b9a659f42b7ef00063b50fe8, type: 3}
+  - {fileID: 3688197049401391858, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
+  - {fileID: 8846073731922670507, guid: 8e99ff01dd7a22e48a6b6913f7f1bfa5, type: 3}
+  miniGameSpawn: {fileID: 23569839}
   secondPlayer: 1
---- !u!4 &589580262
+--- !u!1 &352452738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352452739}
+  - component: {fileID: 352452740}
+  m_Layer: 0
+  m_Name: MinijuegosP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &352452739
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589580260}
+  m_GameObject: {fileID: 352452738}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3, z: 0.9783174}
+  m_LocalPosition: {x: -5, y: 3, z: 0.9783174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352452740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352452738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95164bf260973a24ca165f00e7ac605f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigames:
+  - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
+  - {fileID: 6212030316389746537, guid: c14f8df4b9a659f42b7ef00063b50fe8, type: 3}
+  - {fileID: 3688197049401391858, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
+  - {fileID: 8846073731922670507, guid: 8e99ff01dd7a22e48a6b6913f7f1bfa5, type: 3}
+  miniGameSpawn: {fileID: 352452739}
+  secondPlayer: 0
 --- !u!1 &589812180
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,55 +698,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1541951999
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1541952001}
-  - component: {fileID: 1541952000}
-  m_Layer: 0
-  m_Name: MinijuegosP1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1541952000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541951999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95164bf260973a24ca165f00e7ac605f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minigames:
-  - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
-  - {fileID: 1234654355264751459, guid: 820cc51772730ea4b82389b462629c27, type: 3}
-  miniGameSpawn: {fileID: 1541952001}
-  secondPlayer: 0
---- !u!4 &1541952001
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541951999}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 3, z: 0.9783174}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -703,5 +707,5 @@ SceneRoots:
   - {fileID: 791909856}
   - {fileID: 1046086065}
   - {fileID: 1122950649}
-  - {fileID: 1541952001}
-  - {fileID: 589580262}
+  - {fileID: 352452739}
+  - {fileID: 23569839}
