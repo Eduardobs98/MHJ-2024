@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2279406961461028040}
   - component: {fileID: 2232885129969176466}
   m_Layer: 0
-  m_Name: Tecla
+  m_Name: Tecla 1
   m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 7265cbe74762cf44687f63796552c4fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcebbf4cf2b8fb547aa795668f1ee9a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
