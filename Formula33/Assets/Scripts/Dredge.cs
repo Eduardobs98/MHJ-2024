@@ -1,22 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Dredge : MonoBehaviour
 {
     public GameObject circulo;
-    public float velocidadRotacion;
     public bolitaMovil bmovil;
     public int maxpuntuacion;
-    public float speedMultiplier;
     int puntuacion;
     public miniGame minigame;
     bool secondPlayer;
     // Start is called before the first frame update
+    public GameObject circulo1;
+    public GameObject circulo2;
+    public GameObject circulo3;
+
+    private Vector3 game;
+    public List<Vector3> preSets;
+
+    private float velocidadRotacion;
+    private float speedMultiplier;
+
+    public float velocidadRotacionEasy;
+    public float speedMultiplierEasy;
+
+    public float velocidadRotacionMedium;
+    public float speedMultiplierMedium;
+
+    public float velocidadRotacionHard;
+    public float speedMultiplierHard;
+
+    public int adaptableDifficulty = 0;
+
     void Start()
     {
         puntuacion = 0;
         secondPlayer = minigame.controlador.secondPlayer;
+        adaptableDifficulty = minigame.controlador.adaptableDifficulty;
+        game = preSets[Random.Range(0, preSets.Count)];
+
+        circulo1.transform.rotation = Quaternion.Euler(0, 0, game.x);
+        circulo2.transform.rotation = Quaternion.Euler(0, 0, game.y);
+        circulo3.transform.rotation = Quaternion.Euler(0, 0, game.z);
+
+        if (adaptableDifficulty == 0)
+        {
+            velocidadRotacion = velocidadRotacionEasy;
+            speedMultiplier = speedMultiplierEasy;
+        }
+        else if (adaptableDifficulty == 1)
+        {
+            velocidadRotacion = velocidadRotacionMedium;
+            speedMultiplier = speedMultiplierMedium;
+        }
+        else if (adaptableDifficulty >= 2)
+        {
+            velocidadRotacion = velocidadRotacionHard;
+            speedMultiplier = speedMultiplierHard;
+        }
+
+
     }
 
     // Update is called once per frame

@@ -24,7 +24,7 @@ public class miniGameController : MonoBehaviour
     bool minigameEnded = false;
 
     public TMP_Text puntuacion;
-    int puntos;
+    public int puntos;
     // Start is called before the first frame update
     private void Awake()
     {
