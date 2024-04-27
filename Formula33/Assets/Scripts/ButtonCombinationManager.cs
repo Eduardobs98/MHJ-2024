@@ -10,9 +10,11 @@ public class ButtonCombinationManager : MonoBehaviour
     [SerializeField]
     private List<ButtonOfButtonCombination> buttonTypes;
 
-    private ButtonOfButtonCombination nextButton;
     [SerializeField]
     private List<ButtonOfButtonCombination> currentButtonCombination;
+
+    [SerializeField]
+    private List<GameObject> positions;
 
     private int nextNumberInCombination = 0;
 
@@ -27,11 +29,6 @@ public class ButtonCombinationManager : MonoBehaviour
 
     private void Awake()
     {
-        secondPlayer = minigame.controlador.secondPlayer;
-        for (int i = 0; i < currentButtonCombination.Count; i++)
-        {
-            currentButtonCombination[i].enabled = false;
-        }
         GenerateCombination();
 
     }
@@ -39,6 +36,7 @@ public class ButtonCombinationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        secondPlayer = minigame.controlador.secondPlayer;
         completedCombinations = 0;
     }
 
@@ -59,7 +57,7 @@ public class ButtonCombinationManager : MonoBehaviour
                     ResetCombination();
 
             }
-            if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetKeyDown(KeyCode.A))
             {
                 if (currentButtonType == 1)
                 {
@@ -70,7 +68,7 @@ public class ButtonCombinationManager : MonoBehaviour
                     ResetCombination();
             }
 
-            if (Input.GetKeyDown(KeyCode.S))
+            else if(Input.GetKeyDown(KeyCode.S))
             {
                 if (currentButtonType == 2)
                 {
@@ -81,7 +79,7 @@ public class ButtonCombinationManager : MonoBehaviour
                     ResetCombination();
             }
 
-            if (Input.GetKeyDown(KeyCode.D))
+            else if(Input.GetKeyDown(KeyCode.D))
             {
                 if (currentButtonType == 3)
                 {
@@ -104,7 +102,7 @@ public class ButtonCombinationManager : MonoBehaviour
                     ResetCombination();
 
             }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            else if(Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 if (currentButtonType == 1)
                 {
@@ -115,7 +113,7 @@ public class ButtonCombinationManager : MonoBehaviour
                     ResetCombination();
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            else if(Input.GetKeyDown(KeyCode.DownArrow))
             {
                 if (currentButtonType == 2)
                 {
@@ -126,7 +124,7 @@ public class ButtonCombinationManager : MonoBehaviour
                     ResetCombination();
             }
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if(Input.GetKeyDown(KeyCode.RightArrow))
             {
                 if (currentButtonType == 3)
                 {
@@ -143,12 +141,13 @@ public class ButtonCombinationManager : MonoBehaviour
 
     public void GenerateCombination ()
     {
-
-        for (int i = 0; i < currentButtonCombination.Count; i++)
+        DeleteOldCombination();
+        for (int i = 0; i < positions.Count; i++)
         {
             
             nextNumberInCombination = Random.Range(0, 4);
-            currentButtonCombination[i] = Instantiate<ButtonOfButtonCombination>(buttonTypes[nextNumberInCombination], currentButtonCombination[i].transform);
+            currentButtonCombination.Add(Instantiate<ButtonOfButtonCombination>(buttonTypes[nextNumberInCombination], positions[i].transform));
+            //currentButtonCombination[i] = Instantiate<ButtonOfButtonCombination>(buttonTypes[nextNumberInCombination], currentButtonCombination[i].transform);
             currentButtonCombination[i].enabled = true;
         }
 
@@ -156,6 +155,16 @@ public class ButtonCombinationManager : MonoBehaviour
         currentButtonIndex = 0;
         currentButtonType = currentButton.GetButtonType();
         
+    }
+
+    public void DeleteOldCombination()
+    {
+        for (int i = 0; i < currentButtonCombination.Count; i++)
+        {
+            Destroy(currentButtonCombination[i].gameObject);
+        }
+        currentButtonCombination.Clear();
+
     }
 
     public void NextButton()
@@ -178,7 +187,7 @@ public class ButtonCombinationManager : MonoBehaviour
     public void CompleteCombination()
     {
         completedCombinations++;
-        if(completedCombinations >= maxCombinations)
+        if (completedCombinations >= maxCombinations)
         {
             minigame.Finished();
         } else
@@ -189,7 +198,7 @@ public class ButtonCombinationManager : MonoBehaviour
 
     public void ResetCombination()
     {
-        for (int i = 0; i < currentButtonIndex; i++)
+        for (int i = 0; i < currentButtonCombination.Count; i++)
         {
             currentButtonCombination[i].ResetButton();
         }
