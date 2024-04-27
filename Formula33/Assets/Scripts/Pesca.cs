@@ -14,6 +14,8 @@ public class Pesca : MonoBehaviour
     bool secondPlayer;
     float timerToWin;
     public Image gasofa;
+    public AudioSource sonidoDeLlenado;
+    public AudioSource sonidoFinal;
 
     private float velocidadBajada;
     private float velocidadSubida;
@@ -151,6 +153,17 @@ public class Pesca : MonoBehaviour
         {
             timerToWin += Time.deltaTime;
             gasofa.fillAmount = timerToWin / timeToWin;
+            if (sonidoDeLlenado.isPlaying == false)
+            {
+                sonidoDeLlenado.Play();
+            }
+        }
+        else
+        {
+            if (sonidoDeLlenado.isPlaying == true)
+            {
+                sonidoDeLlenado.Pause();
+            }
         }
         if (timerToWin >= timeToWin)
         {
@@ -160,7 +173,7 @@ public class Pesca : MonoBehaviour
     }
     void WinGame()
     {
-        Debug.Log("Acabe");
+        sonidoFinal.Play();
         minigame.Finished();
     }
 }
