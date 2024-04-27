@@ -55,18 +55,27 @@ public class TimeManager : MonoBehaviour
                 P2Win.SetActive(false);
                 Draw.SetActive(false);
 
+                P1WinPointsPlayer1.text = puntosPlayer1.ToString();
+                P1WinPointsPlayer2.text = puntosPlayer2.ToString();
 
-            } else if (puntosPlayer2 > puntosPlayer1)
+            }
+            else if (puntosPlayer2 > puntosPlayer1)
             {
                 P1Win.SetActive(false);
                 P2Win.SetActive(true);
                 Draw.SetActive(false);
+
+                P2WinPointsPlayer1.text = puntosPlayer1.ToString();
+                P2WinPointsPlayer2.text = puntosPlayer2.ToString();
             }
             else
             {
                 P1Win.SetActive(false);
                 P2Win.SetActive(false);
                 Draw.SetActive(true);
+
+                DrawPointsPlayer1.text = puntosPlayer1.ToString();
+                DrawPointsPlayer2.text = puntosPlayer2.ToString();
             }
         }
 
