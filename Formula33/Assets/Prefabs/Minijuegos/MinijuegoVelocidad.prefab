@@ -278,7 +278,7 @@ MonoBehaviour:
   velocidadSubidaMedium: 0.4
   velocidadBajadaMedium: 1
   timeToFallMedium: 0.15
-  velocidadSubidaHard: 0.2
+  velocidadSubidaHard: 0.25
   velocidadBajadaHard: 1
   timeToFallHard: 0.15
   minigame: {fileID: 8846073731922670507}
