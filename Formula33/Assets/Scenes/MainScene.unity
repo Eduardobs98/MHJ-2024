@@ -291,6 +291,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &211565596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211565597}
+  m_Layer: 0
+  m_Name: Salida (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &211565597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211565596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: -12.04, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213653111
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +747,11 @@ MonoBehaviour:
   adaptableDifficulty: 0
   adaptableDifficultyThresholdMedium: 8
   adaptableDifficultyThresholdHard: 16
+  coche: {fileID: 533345259238004875, guid: 484c5fa32c645af4284072a77eef2ae5, type: 3}
+  salida: {fileID: 1536508279}
+  aparcamiento: {fileID: 797123703}
+  timeEntreEsperas: 0
+  baseTimerEntreEsperas: 0.5
   puntuacion: {fileID: 1844916352}
 --- !u!4 &1316345226
 Transform:
@@ -771,6 +807,11 @@ MonoBehaviour:
   adaptableDifficulty: 0
   adaptableDifficultyThresholdMedium: 8
   adaptableDifficultyThresholdHard: 16
+  coche: {fileID: 533345259238004875, guid: 484c5fa32c645af4284072a77eef2ae5, type: 3}
+  salida: {fileID: 211565597}
+  aparcamiento: {fileID: 1063983076}
+  timeEntreEsperas: 0
+  baseTimerEntreEsperas: 0.5
   puntuacion: {fileID: 1748868496}
 --- !u!4 &1506010995
 Transform:
@@ -782,6 +823,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 3, z: 0.9783174}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1536508278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1536508279}
+  m_Layer: 0
+  m_Name: Salida
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1536508279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536508278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: -12.04, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1310,3 +1382,5 @@ SceneRoots:
   - {fileID: 1506010995}
   - {fileID: 1556715066}
   - {fileID: 141108108}
+  - {fileID: 1536508279}
+  - {fileID: 211565597}

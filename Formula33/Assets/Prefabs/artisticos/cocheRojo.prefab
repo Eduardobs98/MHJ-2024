@@ -120,5 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadCoche: 5
+  velocidadSalida: 15
   aparcamiento: {fileID: 0}
+  siga: 0
   animadorCoche: {fileID: 128829597761605105}
