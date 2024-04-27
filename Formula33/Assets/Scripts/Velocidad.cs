@@ -11,11 +11,14 @@ public class Velocidad : MonoBehaviour
     public float timeToFall;
     public miniGame minigame;
     float timerToFall;
+    bool secondPlayer;
     // Start is called before the first frame update
     void Start()
     {
+        secondPlayer = minigame.controlador.secondPlayer;
         barra.value = 0;
         timerToFall = timeToFall;
+        
     }
 
     // Update is called once per frame
@@ -26,11 +29,23 @@ public class Velocidad : MonoBehaviour
         {
             barra.value = Mathf.Lerp(barra.value, 0, (velocidad) * Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!secondPlayer)
         {
-            barra.value += subida / 100;
-            timerToFall = timeToFall;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                barra.value += subida / 100;
+                timerToFall = timeToFall;
+            }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                barra.value += subida / 100;
+                timerToFall = timeToFall;
+            }
+        }
+        
         if (barra.value >= barra.maxValue)
         {
             WinGame();

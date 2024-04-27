@@ -8,6 +8,7 @@ public class miniGameController : MonoBehaviour
     public Transform miniGameSpawn;
     miniGame currentMinigame;
     int indice = 0;
+    public bool secondPlayer;
     // Start is called before the first frame update
     private void Awake()
     {
