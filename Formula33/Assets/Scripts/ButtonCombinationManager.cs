@@ -11,6 +11,9 @@ public class ButtonCombinationManager : MonoBehaviour
     private List<ButtonOfButtonCombination> buttonTypes;
 
     [SerializeField]
+    private List<ButtonOfButtonCombination> buttonTypesP2;
+
+    [SerializeField]
     private List<ButtonOfButtonCombination> currentButtonCombination;
 
     [SerializeField]
@@ -27,17 +30,14 @@ public class ButtonCombinationManager : MonoBehaviour
     public miniGame minigame;
     bool secondPlayer;
 
-    private void Awake()
-    {
-        GenerateCombination();
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         secondPlayer = minigame.controlador.secondPlayer;
+        if (secondPlayer)
+            buttonTypes = buttonTypesP2;
         completedCombinations = 0;
+        GenerateCombination();
     }
 
     // Update is called once per frame
