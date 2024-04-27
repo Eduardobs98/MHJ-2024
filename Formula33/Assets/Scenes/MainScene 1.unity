@@ -202,7 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadCoche: 5
+  velocidadSalida: 0
   aparcamiento: {fileID: 1122950649}
+  siga: 0
   animadorCoche: {fileID: 466281210}
 --- !u!95 &466281210 stripped
 Animator:
@@ -320,6 +322,14 @@ MonoBehaviour:
   - {fileID: 3688197049401391858, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
   miniGameSpawn: {fileID: 589580262}
   secondPlayer: 1
+  adaptableDifficulty: 0
+  adaptableDifficultyThresholdMedium: 0
+  adaptableDifficultyThresholdHard: 0
+  coche: {fileID: 0}
+  salida: {fileID: 0}
+  aparcamiento: {fileID: 0}
+  timeEntreEsperas: 0
+  baseTimerEntreEsperas: 0.5
   puntuacion: {fileID: 758572472}
 --- !u!4 &589580262
 Transform:
@@ -1361,6 +1371,14 @@ MonoBehaviour:
   - {fileID: 3688197049401391858, guid: 62cbd100dbd8a16489261ac6c4e74f39, type: 3}
   miniGameSpawn: {fileID: 1541952001}
   secondPlayer: 0
+  adaptableDifficulty: 0
+  adaptableDifficultyThresholdMedium: 0
+  adaptableDifficultyThresholdHard: 0
+  coche: {fileID: 0}
+  salida: {fileID: 0}
+  aparcamiento: {fileID: 0}
+  timeEntreEsperas: 0
+  baseTimerEntreEsperas: 0.5
   puntuacion: {fileID: 1070927090}
 --- !u!4 &1541952001
 Transform:
