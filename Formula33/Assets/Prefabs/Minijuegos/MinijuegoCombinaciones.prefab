@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 1230050281599140933}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -141,7 +141,7 @@ MonoBehaviour:
   - {fileID: 7426480769492886308}
   - {fileID: 3892992513643808740}
   - {fileID: 9148532409180903035}
-  numberOfButtons: 4
+  numberOfButtons: 6
   completedCombinations: 0
   maxCombinations: 3
   minigame: {fileID: 1234654355264751459}
