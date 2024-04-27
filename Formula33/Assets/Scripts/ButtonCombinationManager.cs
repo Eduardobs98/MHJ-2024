@@ -23,9 +23,11 @@ public class ButtonCombinationManager : MonoBehaviour
     public int completedCombinations = 0;
     public int maxCombinations = 4;
     public miniGame minigame;
+    bool secondPlayer;
 
     private void Awake()
     {
+        secondPlayer = minigame.controlador.secondPlayer;
         for (int i = 0; i < currentButtonCombination.Count; i++)
         {
             currentButtonCombination[i].enabled = false;
@@ -44,50 +46,98 @@ public class ButtonCombinationManager : MonoBehaviour
     void Update()
     {
 
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        if(!secondPlayer)
         {
-            if (currentButtonType == 0)
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                currentButton.PressButton();
-                NextButton();
-            }
-            else
-                ResetCombination();
+                if (currentButtonType == 0)
+                {
+                    currentButton.PressButton();
+                    NextButton();
+                }
+                else
+                    ResetCombination();
 
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (currentButtonType == 1)
-            {
-                currentButton.PressButton();
-                NextButton();
             }
-            else
-                ResetCombination();
-        }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (currentButtonType == 1)
+                {
+                    currentButton.PressButton();
+                    NextButton();
+                }
+                else
+                    ResetCombination();
+            }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (currentButtonType == 2)
+            if (Input.GetKeyDown(KeyCode.S))
             {
-                currentButton.PressButton();
-                NextButton();
+                if (currentButtonType == 2)
+                {
+                    currentButton.PressButton();
+                    NextButton();
+                }
+                else
+                    ResetCombination();
             }
-            else
-                ResetCombination();
-        }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (currentButtonType == 3)
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                currentButton.PressButton();
-                NextButton();
+                if (currentButtonType == 3)
+                {
+                    currentButton.PressButton();
+                    NextButton();
+                }
+                else
+                    ResetCombination();
             }
-            else
-                ResetCombination();
+        } else
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                if (currentButtonType == 0)
+                {
+                    currentButton.PressButton();
+                    NextButton();
+                }
+                else
+                    ResetCombination();
+
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                if (currentButtonType == 1)
+                {
+                    currentButton.PressButton();
+                    NextButton();
+                }
+                else
+                    ResetCombination();
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (currentButtonType == 2)
+                {
+                    currentButton.PressButton();
+                    NextButton();
+                }
+                else
+                    ResetCombination();
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                if (currentButtonType == 3)
+                {
+                    currentButton.PressButton();
+                    NextButton();
+                }
+                else
+                    ResetCombination();
+            }
         }
+       
     }
 
 
