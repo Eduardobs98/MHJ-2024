@@ -10,7 +10,11 @@ public class miniGameController : MonoBehaviour
     miniGame currentMinigame;
     int indice = 0;
     public bool secondPlayer;
-    public int adaptableDifficulty; //0 = easy, 1 = medium, 2 = difficult
+    public int adaptableDifficulty = 0; //0 = easy, 1 = medium, 2 = difficult
+
+    public int adaptableDifficultyThresholdMedium;
+    public int adaptableDifficultyThresholdHard;
+
 
     public TMP_Text puntuacion;
     int puntos;
@@ -35,9 +39,22 @@ public class miniGameController : MonoBehaviour
     void NextMiniGame()
     {
         int indiceAux = indice;
+
         do
             indice = Random.Range(0, minigames.Count);
         while (indiceAux == indice);
+        
+        if(puntos >= adaptableDifficultyThresholdHard)
+        {
+            adaptableDifficulty = 2;
+
+        }
+        else if(puntos >= adaptableDifficultyThresholdMedium)
+        {
+            adaptableDifficulty = 1;
+
+        }
+
         InstantiateMiniGame();
     }
     void InstantiateMiniGame()
@@ -48,8 +65,9 @@ public class miniGameController : MonoBehaviour
     public void EndMinigame()
     {
         Destroy(currentMinigame.gameObject);
-        NextMiniGame();
         puntos++;
         puntuacion.text = puntos.ToString();
+        NextMiniGame();
+        
     }
 }

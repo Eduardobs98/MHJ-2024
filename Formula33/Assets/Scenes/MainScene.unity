@@ -714,6 +714,8 @@ MonoBehaviour:
   miniGameSpawn: {fileID: 1316345226}
   secondPlayer: 0
   adaptableDifficulty: 0
+  adaptableDifficultyThresholdMedium: 8
+  adaptableDifficultyThresholdHard: 16
   puntuacion: {fileID: 1844916352}
 --- !u!4 &1316345226
 Transform:
@@ -767,6 +769,8 @@ MonoBehaviour:
   miniGameSpawn: {fileID: 1506010995}
   secondPlayer: 1
   adaptableDifficulty: 0
+  adaptableDifficultyThresholdMedium: 8
+  adaptableDifficultyThresholdHard: 16
   puntuacion: {fileID: 1748868496}
 --- !u!4 &1506010995
 Transform:
