@@ -29,6 +29,9 @@ public class Velocidad : MonoBehaviour
     bool secondPlayer;
     public int adaptableDifficulty;
 
+    public AudioSource audioSource;
+    public List<AudioClip> velocitySounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +80,7 @@ public class Velocidad : MonoBehaviour
             {
                 barra.value += velocidadSubida;
                 timerToFall = timeToFall;
+                PlayVelocitySound();
             }
         }
         else
@@ -85,6 +89,7 @@ public class Velocidad : MonoBehaviour
             {
                 barra.value += velocidadSubida;
                 timerToFall = timeToFall;
+                PlayVelocitySound();
             }
         }
         
@@ -92,6 +97,12 @@ public class Velocidad : MonoBehaviour
         {
             WinGame();
         }
+    }
+    public void PlayVelocitySound()
+    {
+        int i = Random.Range(0, velocitySounds.Count);
+        audioSource.clip = velocitySounds[i];
+        audioSource.Play();
     }
     void WinGame()
     {
