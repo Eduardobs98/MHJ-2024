@@ -1050,7 +1050,7 @@ MonoBehaviour:
   P2WinPointsPlayer2: {fileID: 1787282726}
   DrawPointsPlayer1: {fileID: 1709100742}
   DrawPointsPlayer2: {fileID: 103005977}
-  timer: 120
+  timer: 90
   winnerPannel: {fileID: 786374231}
   P1Win: {fileID: 125081526}
   P2Win: {fileID: 659326055}
