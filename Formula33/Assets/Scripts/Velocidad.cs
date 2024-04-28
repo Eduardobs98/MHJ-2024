@@ -31,6 +31,10 @@ public class Velocidad : MonoBehaviour
 
     public AudioSource audioSource;
     public List<AudioClip> velocitySounds;
+    public GameObject aleronRojo;
+    public GameObject aleronVerde;
+    public Animator animadorRojo;
+    public Animator animadorVerde;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +42,16 @@ public class Velocidad : MonoBehaviour
         barra.value = 0;
         secondPlayer = minigame.controlador.secondPlayer;
         timerToFall = 0;
-
+        if (!secondPlayer)
+        {
+            aleronRojo.SetActive(true);
+            aleronVerde.SetActive(false);
+        }
+        else
+        {
+            aleronRojo.SetActive(false);
+            aleronVerde.SetActive(true);
+        }
         adaptableDifficulty = minigame.controlador.adaptableDifficulty;
 
         if (adaptableDifficulty == 0)
@@ -69,11 +82,14 @@ public class Velocidad : MonoBehaviour
         if (timerToFall <= 0)
         {
             barra.value -= velocidadBajada * Time.deltaTime;
+            animadorRojo.SetBool("going", false);
+            animadorVerde.SetBool("going", false);
         }
-        /*else
+        else
         {
-            barra.value += velocidadSubida * Time.deltaTime;
-        }*/
+            animadorRojo.SetBool("going", true);
+            animadorVerde.SetBool("going", true);
+        }
         if (!secondPlayer)
         {
             if (Input.GetKeyDown(KeyCode.W))
