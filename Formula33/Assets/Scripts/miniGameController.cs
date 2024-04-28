@@ -8,7 +8,9 @@ public class miniGameController : MonoBehaviour
     public List<miniGame> minigames;
     public Transform miniGameSpawn;
     miniGame currentMinigame;
-    int indice = 0;
+    int indice = -1;
+    int indiceNoRepeat1 = -1;
+    int indiceNoRepeat2 = -1;
     public bool secondPlayer;
     public int adaptableDifficulty = 0; //0 = easy, 1 = medium, 2 = difficult
 
@@ -36,7 +38,7 @@ public class miniGameController : MonoBehaviour
     }
     void Start()
     {
-        
+        puntuacion.text = puntos.ToString();
     }
 
     // Update is called once per frame
@@ -48,11 +50,14 @@ public class miniGameController : MonoBehaviour
         if (timerEntreEsperas > 0)
             return;
 
-        int indiceAux = indice;
+        if (indiceNoRepeat1 >= 0)
+            indiceNoRepeat2 = indiceNoRepeat1;
+
+        indiceNoRepeat1 = indice;
 
         do
             indice = Random.Range(0, minigames.Count);
-        while (indiceAux == indice);
+        while (indiceNoRepeat1 == indice || indiceNoRepeat2 == indice);
 
         if (puntos >= adaptableDifficultyThresholdHard)
         {

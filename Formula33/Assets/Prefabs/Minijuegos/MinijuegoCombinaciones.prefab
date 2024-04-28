@@ -259,9 +259,9 @@ MonoBehaviour:
   - {fileID: 9148532409180903035}
   numberOfButtons: 4
   completedCombinations: 0
-  maxCombinationsEasy: 4
-  maxCombinationsMedum: 4
-  maxCombinationsHard: 4
+  maxCombinationsEasy: 3
+  maxCombinationsMedum: 3
+  maxCombinationsHard: 3
   minigame: {fileID: 1234654355264751459}
   adaptableDifficulty: 0
 --- !u!1 &3892992513643808740
