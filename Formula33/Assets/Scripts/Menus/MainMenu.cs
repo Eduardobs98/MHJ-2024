@@ -36,7 +36,6 @@ public class MainMenu : MonoBehaviour
         options.SetActive(true);
         audioMixer.GetFloat("Volume",out valor);
         audioSlider.value = valor;
-        volumeSlider.Select();
     }
 
     public void Exit()
@@ -48,14 +47,12 @@ public class MainMenu : MonoBehaviour
         main.SetActive(false);
         options.SetActive(false);
         credits.SetActive(true);
-        back.Select();
     }
     public void Back()
     {
         main.SetActive(true);
         options.SetActive(false);
         credits.SetActive(false);
-        playButton.Select();
     }
     public void CambiarVolumen(float volumen)
     {
