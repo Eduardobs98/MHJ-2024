@@ -34,6 +34,7 @@ public class Dredge : MonoBehaviour
     public AudioSource audioSource;
     public List<AudioClip> dredgeSounds;
     public List<AudioClip> dredgeFailSounds;
+    public Animator animador;
 
     void Start()
     {
@@ -78,6 +79,7 @@ public class Dredge : MonoBehaviour
                     puntuacion++;
                     velocidadRotacion *= speedMultiplier;
                     bmovil.quitarChoclo();
+                    animador.SetTrigger("acertado");
                     PlayDredgeSound();
                     if (puntuacion >= maxpuntuacion)
                     {
@@ -99,6 +101,7 @@ public class Dredge : MonoBehaviour
                     puntuacion++;
                     velocidadRotacion *= speedMultiplier;
                     bmovil.quitarChoclo();
+                    animador.SetTrigger("acertado");
                     PlayDredgeSound();
                     if (puntuacion >= maxpuntuacion)
                     {
