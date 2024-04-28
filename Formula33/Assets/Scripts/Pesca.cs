@@ -48,6 +48,9 @@ public class Pesca : MonoBehaviour
     public float timeToWinHard;
     public int adaptableDifficulty;
 
+    public AudioSource audioSource;
+    public AudioClip clickAudio;
+
 
     // Start is called before the first frame update
     void Start()

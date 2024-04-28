@@ -37,8 +37,33 @@ public class TimeManager : MonoBehaviour
     public bool seAcabo = false;
 
     public AudioSource music;
+    public AudioSource auxiliarAudioSource;
+    public AudioSource winnerAudioSource;
+    public AudioSource publicAudioSource;
+
 
     public AudioClip endMusic;
+
+    public AudioClip Player1Wins;
+    public AudioClip Player2Wins;
+
+    public AudioClip ready;
+
+    public AudioClip firstWarningClip;
+    public AudioClip secondWarningClip;
+    public AudioClip thirdWarningClip;
+    public AudioClip countDownClip;
+    public AudioClip countDown0Clip;
+
+    public AudioClip PublicShout;
+
+    public bool firstWarning = false;
+    public bool secondWarning = false;
+    public bool thirdWarning = false;
+    public bool countDown = false;
+
+    public float auxCounter = 9.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,8 +77,39 @@ public class TimeManager : MonoBehaviour
 
         timer -= Time.deltaTime;
 
+        if(timer <= 60.0f && !firstWarning)
+        {
+            firstWarning = true;
+            auxiliarAudioSource.clip = firstWarningClip;
+            auxiliarAudioSource.Play();
+        }
+
+        if (timer <= 30.0f && !secondWarning)
+        {
+            secondWarning = true;
+            auxiliarAudioSource.clip = secondWarningClip;
+            auxiliarAudioSource.Play();
+        }
+
+        if (timer <= 10.0f && !thirdWarning)
+        {
+            thirdWarning = true;
+            auxiliarAudioSource.clip = thirdWarningClip;
+            auxiliarAudioSource.Play();
+        }
+
+        if (timer <= auxCounter)
+        {
+            --auxCounter;
+            auxiliarAudioSource.clip = countDownClip;
+            auxiliarAudioSource.Play();
+        }
+
+
         if (timer <= 0.0f && !seAcabo)
         {
+            auxiliarAudioSource.clip = countDown0Clip;
+            auxiliarAudioSource.Play();
             seAcabo = true;
             winnerPannel.SetActive(true);
             puntosPlayer1 = player1Controller.puntos;
@@ -68,6 +124,9 @@ public class TimeManager : MonoBehaviour
 
                 P1WinPointsPlayer1.text = puntosPlayer1.ToString();
                 P1WinPointsPlayer2.text = puntosPlayer2.ToString();
+                winnerAudioSource.clip = Player1Wins;
+
+                winnerAudioSource.Play();
 
             }
             else if (puntosPlayer2 > puntosPlayer1)
@@ -78,6 +137,8 @@ public class TimeManager : MonoBehaviour
 
                 P2WinPointsPlayer1.text = puntosPlayer1.ToString();
                 P2WinPointsPlayer2.text = puntosPlayer2.ToString();
+                winnerAudioSource.clip = Player2Wins;
+                winnerAudioSource.Play();
             }
             else
             {
@@ -110,5 +171,7 @@ public class TimeManager : MonoBehaviour
         music.Stop();
         music.clip = endMusic;
         music.Play();
+        publicAudioSource.Play();
+
     }
 }
