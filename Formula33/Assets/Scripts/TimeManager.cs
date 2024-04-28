@@ -93,6 +93,9 @@ public class TimeManager : MonoBehaviour
 
         var ts = TimeSpan.FromSeconds(timer);
         timerText.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
-
+        if (timer < 10)
+        {
+            timerText.color= Color.red;
+        }
     }
 }
