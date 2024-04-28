@@ -12,6 +12,7 @@ public class calamar : MonoBehaviour
     public Color colorNegro;
     public Color colorTransparente;
     public float velocidad;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,14 +46,18 @@ public class calamar : MonoBehaviour
                 tintaTimer = tintaTime;
             }
         }
-        if (tintaTimer < tintaTime * 0.3f && tintaTimer > tintaTime * 0.1f)
+        if (tintaTimer < tintaTime * 0.5f && tintaTimer > tintaTime * 0.1f)
         {
             //tinta.color = Color.Lerp(colorNegro, colorTransparente, velocidad*Time.deltaTime);
-            tinta.color = new Vector4(tinta.color.r, tinta.color.g, tinta.color.b, Mathf.Lerp(1,0, velocidad * Time.deltaTime));
+            tinta.color = new Vector4(tinta.color.r, tinta.color.g, tinta.color.b, Mathf.Lerp(1,0, velocidad * Time.fixedDeltaTime));
         }
         if(tintaTimer < tintaTime * 0.1f)
         {
             tinta.color = new Vector4(tinta.color.r, tinta.color.g, tinta.color.b, 0);
         }
+    }
+    private void FixedUpdate()
+    {
+        
     }
 }
