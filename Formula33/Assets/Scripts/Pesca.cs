@@ -16,6 +16,8 @@ public class Pesca : MonoBehaviour
     public Image gasofa;
     public AudioSource sonidoDeLlenado;
     public AudioSource sonidoFinal;
+    public Color wrongColor;
+    public Color rightColor;
 
     private float velocidadBajada;
     private float velocidadSubida;
@@ -52,7 +54,7 @@ public class Pesca : MonoBehaviour
     {
 
         adaptableDifficulty = minigame.controlador.adaptableDifficulty;
-
+        zonaBuena.color = wrongColor;
         if (adaptableDifficulty == 0)
         {
             velocidadBajada = velocidadBajadaEasy;
@@ -153,6 +155,7 @@ public class Pesca : MonoBehaviour
         {
             timerToWin += Time.deltaTime;
             gasofa.fillAmount = timerToWin / timeToWin;
+            zonaBuena.color = rightColor;
             if (sonidoDeLlenado.isPlaying == false)
             {
                 sonidoDeLlenado.Play();
@@ -160,6 +163,7 @@ public class Pesca : MonoBehaviour
         }
         else
         {
+            zonaBuena.color = wrongColor;
             if (sonidoDeLlenado.isPlaying == true)
             {
                 sonidoDeLlenado.Pause();
