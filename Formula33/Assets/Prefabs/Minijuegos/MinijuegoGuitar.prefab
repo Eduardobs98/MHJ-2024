@@ -577,9 +577,9 @@ MonoBehaviour:
   tecla4: {fileID: 3839676661088982655}
   minigame: {fileID: 6212030316389746537}
   adaptableDifficulty: 0
-  maxNotasEasy: 10
-  maxNotasMedium: 15
-  maxNotasLarge: 20
+  maxNotasEasy: 8
+  maxNotasMedium: 12
+  maxNotasLarge: 16
 --- !u!82 &6377826191058386724
 AudioSource:
   m_ObjectHideFlags: 0

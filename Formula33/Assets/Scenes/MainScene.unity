@@ -1848,8 +1848,8 @@ MonoBehaviour:
   miniGameSpawn: {fileID: 1316345226}
   secondPlayer: 0
   adaptableDifficulty: 0
-  adaptableDifficultyThresholdMedium: 8
-  adaptableDifficultyThresholdHard: 16
+  adaptableDifficultyThresholdMedium: 6
+  adaptableDifficultyThresholdHard: 14
   coche: {fileID: 533345259238004875, guid: 484c5fa32c645af4284072a77eef2ae5, type: 3}
   salida: {fileID: 1536508279}
   aparcamiento: {fileID: 797123703}
