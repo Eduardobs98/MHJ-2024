@@ -48,8 +48,7 @@ public class Pesca : MonoBehaviour
     public float timeToWinHard;
     public int adaptableDifficulty;
 
-    public AudioSource audioSource;
-    public AudioClip clickAudio;
+    public AudioSource audioSourceClick;
 
 
     // Start is called before the first frame update
@@ -124,6 +123,7 @@ public class Pesca : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 timerToFall = timeToFall;
+                playClickAudio();
             }
         }
         else
@@ -131,6 +131,7 @@ public class Pesca : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 timerToFall = timeToFall;
+                playClickAudio();
             }
         }
 
@@ -177,6 +178,12 @@ public class Pesca : MonoBehaviour
             WinGame();
         }
         
+    }
+
+    public void playClickAudio()
+    {
+        audioSourceClick.Play();
+
     }
     void WinGame()
     {
