@@ -8,6 +8,7 @@ using System;
 using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
+
 public class TimeManager : MonoBehaviour
 {
 
@@ -35,6 +36,10 @@ public class TimeManager : MonoBehaviour
 
     public bool seAcabo = false;
 
+    public AudioSource music;
+
+    public AudioClip endMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +58,7 @@ public class TimeManager : MonoBehaviour
             winnerPannel.SetActive(true);
             puntosPlayer1 = player1Controller.puntos;
             puntosPlayer2 = player2Controller.puntos;
+            WinMusic();
 
             if (puntosPlayer1 > puntosPlayer2)
             {
@@ -97,5 +103,12 @@ public class TimeManager : MonoBehaviour
         {
             timerText.color= Color.red;
         }
+    }
+
+    public void WinMusic()
+    {
+        music.Stop();
+        music.clip = endMusic;
+        music.Play();
     }
 }

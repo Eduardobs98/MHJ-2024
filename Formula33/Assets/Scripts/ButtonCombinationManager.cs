@@ -238,8 +238,7 @@ public class ButtonCombinationManager : MonoBehaviour
     public void ResetCombination()
     {
 
-        GenerateCombination();
-        /*
+        //GenerateCombination();
         for (int i = 0; i < currentButtonCombination.Count; i++)
         {
             currentButtonCombination[i].ResetButton();
@@ -247,7 +246,6 @@ public class ButtonCombinationManager : MonoBehaviour
         currentButton = currentButtonCombination[0];
         currentButtonIndex = 0;
         currentButtonType = currentButton.GetButtonType();
-        */
     }
 
     public void PlayDrillSound()
