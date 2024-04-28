@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
     public Slider audioSlider;
     public AudioMixer audioMixer;
     private float valor;
+    public AudioSource click;
+    public AudioSource hover;
 
 
     private void Start()
@@ -27,11 +29,13 @@ public class MainMenu : MonoBehaviour
     }
     public void Play()
     {
+        click.Play();
         SceneManager.LoadScene("MainScene");
     } 
     
     public void Options()
     {
+        click.Play();
         main.SetActive(false);
         options.SetActive(true);
         audioMixer.GetFloat("Volume",out valor);
@@ -40,16 +44,19 @@ public class MainMenu : MonoBehaviour
 
     public void Exit()
     {
+        click.Play();
         Application.Quit();
     }
     public void Credits()
     {
+        click.Play();
         main.SetActive(false);
         options.SetActive(false);
         credits.SetActive(true);
     }
     public void Back()
     {
+        click.Play();
         main.SetActive(true);
         options.SetActive(false);
         credits.SetActive(false);
