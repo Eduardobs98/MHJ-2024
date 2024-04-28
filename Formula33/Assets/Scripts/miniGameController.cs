@@ -25,6 +25,10 @@ public class miniGameController : MonoBehaviour
     public float baseTimerEntreEsperas = 0.5f;
     bool minigameEnded = false;
 
+    public AudioSource audioSourceSalida;
+    public List<AudioClip> audioSourceSalidaClip;
+
+
     public TMP_Text puntuacion;
     public int puntos;
     // Start is called before the first frame update
@@ -73,6 +77,14 @@ public class miniGameController : MonoBehaviour
         InstantiateMiniGame();
 
     }
+
+    public void SalidaCarro()
+    {
+        int i = Random.Range(0, audioSourceSalidaClip.Count);
+        audioSourceSalida.clip = audioSourceSalidaClip[i];
+        audioSourceSalida.Play();
+    }
+
     void NextMiniGame()
     {
         minigameEnded = true;
@@ -92,6 +104,7 @@ public class miniGameController : MonoBehaviour
         puntos++;
         puntuacion.text = puntos.ToString();
         currentCoche.GetComponent<cocheRojo>().siga = true;
+        SalidaCarro();
         NextMiniGame();
     }
 }

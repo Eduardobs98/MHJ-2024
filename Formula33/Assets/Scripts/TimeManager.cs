@@ -98,7 +98,7 @@ public class TimeManager : MonoBehaviour
             auxiliarAudioSource.Play();
         }
 
-        if (timer <= auxCounter)
+        if (timer <= auxCounter && timer >0)
         {
             --auxCounter;
             auxiliarAudioSource.clip = countDownClip;
