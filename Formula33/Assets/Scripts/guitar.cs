@@ -18,6 +18,11 @@ public class guitar : MonoBehaviour
     public int maxNotasMedium;
     public int maxNotasLarge;
 
+    public AudioSource audioSource;
+    public List<AudioClip> beepSounds;
+    public List<AudioClip> failBeepSounds;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +55,11 @@ public class guitar : MonoBehaviour
                 {
                     Destroy(tecla1.nota);
                     numNotas++;
+                    playBeepSound();
+                }
+                else
+                {
+                    playBeepFailSound();
                 }
             }
             if (Input.GetKeyDown(KeyCode.W))
@@ -58,6 +68,11 @@ public class guitar : MonoBehaviour
                 {
                     Destroy(tecla2.nota);
                     numNotas++;
+                    playBeepSound();
+                }
+                else
+                {
+                    playBeepFailSound();
                 }
             }
             if (Input.GetKeyDown(KeyCode.S))
@@ -66,6 +81,11 @@ public class guitar : MonoBehaviour
                 {
                     Destroy(tecla3.nota);
                     numNotas++;
+                    playBeepSound();
+                }
+                else
+                {
+                    playBeepFailSound();
                 }
             }
             if (Input.GetKeyDown(KeyCode.D))
@@ -74,6 +94,11 @@ public class guitar : MonoBehaviour
                 {
                     Destroy(tecla4.nota);
                     numNotas++;
+                    playBeepSound();
+                }
+                else
+                {
+                    playBeepFailSound();
                 }
             }
         }
@@ -85,6 +110,11 @@ public class guitar : MonoBehaviour
                 {
                     Destroy(tecla1.nota);
                     numNotas++;
+                    playBeepSound();
+                }
+                else
+                {
+                    playBeepFailSound();
                 }
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -93,6 +123,11 @@ public class guitar : MonoBehaviour
                 {
                     Destroy(tecla2.nota);
                     numNotas++;
+                    playBeepSound();
+                }
+                else
+                {
+                    playBeepFailSound();
                 }
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -101,6 +136,11 @@ public class guitar : MonoBehaviour
                 {
                     Destroy(tecla3.nota);
                     numNotas++;
+                    playBeepSound();
+                }
+                else
+                {
+                    playBeepFailSound();
                 }
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -109,6 +149,11 @@ public class guitar : MonoBehaviour
                 {
                     Destroy(tecla4.nota);
                     numNotas++;
+                    playBeepSound();
+                }
+                else
+                {
+                    playBeepFailSound();
                 }
             }
         }
@@ -120,5 +165,19 @@ public class guitar : MonoBehaviour
     void WinGame()
     {
         minigame.Finished();
+    }
+
+    public void playBeepSound()
+    {
+        int i = Random.Range(0, beepSounds.Count);
+        audioSource.clip = beepSounds[i];
+        audioSource.Play();
+    }
+
+    public void playBeepFailSound()
+    {
+        int i = Random.Range(0, failBeepSounds.Count);
+        audioSource.clip = failBeepSounds[i];
+        audioSource.Play();
     }
 }

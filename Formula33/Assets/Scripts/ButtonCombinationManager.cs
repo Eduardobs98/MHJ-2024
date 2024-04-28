@@ -44,6 +44,10 @@ public class ButtonCombinationManager : MonoBehaviour
     bool secondPlayer;
     public int adaptableDifficulty = 0;
 
+
+    public AudioSource audioSourceTaladro;
+    public List<AudioClip> clipsAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -201,7 +205,8 @@ public class ButtonCombinationManager : MonoBehaviour
 
     public void NextButton()
     {
-        if(currentButtonIndex < currentButtonCombination.Count-1)
+        PlayDrillSound();
+        if (currentButtonIndex < currentButtonCombination.Count-1)
         {
             currentButtonIndex++;
             currentButton = currentButtonCombination[currentButtonIndex];
@@ -218,6 +223,8 @@ public class ButtonCombinationManager : MonoBehaviour
 
     public void CompleteCombination()
     {
+        //PlayDrillSound();
+
         completedCombinations++;
         if (completedCombinations >= maxCombinations)
         {
@@ -230,6 +237,9 @@ public class ButtonCombinationManager : MonoBehaviour
 
     public void ResetCombination()
     {
+
+        GenerateCombination();
+        /*
         for (int i = 0; i < currentButtonCombination.Count; i++)
         {
             currentButtonCombination[i].ResetButton();
@@ -237,6 +247,14 @@ public class ButtonCombinationManager : MonoBehaviour
         currentButton = currentButtonCombination[0];
         currentButtonIndex = 0;
         currentButtonType = currentButton.GetButtonType();
+        */
+    }
+
+    public void PlayDrillSound()
+    {
+        int i = Random.Range(0, clipsAudio.Count);
+        audioSourceTaladro.clip = clipsAudio[i];
+        audioSourceTaladro.Play();
     }
 
 }
