@@ -12,12 +12,14 @@ public class calamar : MonoBehaviour
     public Color colorNegro;
     public Color colorTransparente;
     public float velocidad;
+    public bool canUseOil;
     
     // Start is called before the first frame update
     void Start()
     {
         tinta.color = colorTransparente;
         tintaTimer = 0;
+        canUseOil = true;
     }
 
     // Update is called once per frame
@@ -30,20 +32,22 @@ public class calamar : MonoBehaviour
        
         if(!secondPlayer) 
         {
-            if(Input.GetKeyUp(KeyCode.P)) 
+            if(Input.GetKeyUp(KeyCode.P)&&canUseOil) 
             {
                 //tinta.gameObject.SetActive(true);
                 tinta.color = colorNegro;
                 tintaTimer = tintaTime;
+                canUseOil= false;
             }
         }
         else
         {
-            if (Input.GetKeyUp(KeyCode.Q))
+            if (Input.GetKeyUp(KeyCode.Q)&&canUseOil)
             {
                 //tinta.gameObject.SetActive(true);
                 tinta.color = colorNegro;
                 tintaTimer = tintaTime;
+                canUseOil = false;
             }
         }
         if (tintaTimer < tintaTime * 0.5f && tintaTimer > tintaTime * 0.1f)
@@ -55,9 +59,5 @@ public class calamar : MonoBehaviour
         {
             tinta.color = new Vector4(tinta.color.r, tinta.color.g, tinta.color.b, 0);
         }
-    }
-    private void FixedUpdate()
-    {
-        
     }
 }
