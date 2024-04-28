@@ -69,7 +69,7 @@ public class createNote : MonoBehaviour
     void cNote(Transform posicion,GameObject tecla)
     {
         GameObject teclita = Instantiate(tecla, posicion);
-        teclita.transform.parent = null;
+        //teclita.transform.parent = null;
     }
 
     void mirarTeclas(Vector4 queTeclas)
