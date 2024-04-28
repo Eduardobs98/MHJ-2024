@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Dredge : MonoBehaviour
 {
@@ -35,6 +33,7 @@ public class Dredge : MonoBehaviour
 
     public AudioSource audioSource;
     public List<AudioClip> dredgeSounds;
+    public List<AudioClip> dredgeFailSounds;
 
     void Start()
     {
@@ -84,6 +83,10 @@ public class Dredge : MonoBehaviour
                     {
                         WinGame();
                     }
+                } 
+                else
+                {
+                    PlayDredgeFailSound();
                 }
             }
         }
@@ -102,19 +105,29 @@ public class Dredge : MonoBehaviour
                         WinGame();
                     }
                 }
+                else
+                {
+                    PlayDredgeFailSound();
+                }
             }
         }
-        
+
     }
 
     public void PlayDredgeSound()
     {
-        /*
         int i = Random.Range(0, dredgeSounds.Count);
         audioSource.clip = dredgeSounds[i];
         audioSource.Play();
-        */
     }
+
+    public void PlayDredgeFailSound()
+    {
+        int i = Random.Range(0, dredgeFailSounds.Count);
+        audioSource.clip = dredgeFailSounds[i];
+        audioSource.Play();
+    }
+
     void WinGame()
     {
         minigame.Finished();
