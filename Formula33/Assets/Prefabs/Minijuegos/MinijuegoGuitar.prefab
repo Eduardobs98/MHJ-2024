@@ -581,10 +581,10 @@ MonoBehaviour:
   maxNotasLarge: 16
   audioSource: {fileID: 4564512490426853140}
   beepSounds:
-  - {fileID: 8300000, guid: 3d4a3b1338dc62b409bcc7f1c7f94b4c, type: 3}
-  - {fileID: 8300000, guid: d736b864c442bb84c9f189004dd32437, type: 3}
-  - {fileID: 8300000, guid: d9da5b28e5e972f48b1bb79fc07f9958, type: 3}
-  - {fileID: 8300000, guid: 2bb525a78952690499e326b1b9d4fdb0, type: 3}
+  - {fileID: 8300000, guid: dbc9c4eba7c328b4f86f113bfac34ba9, type: 3}
+  - {fileID: 8300000, guid: b00a0ba5d45dd554d862bc947f543e98, type: 3}
+  - {fileID: 8300000, guid: aadf27a099055dd40b822f5aa57415ba, type: 3}
+  - {fileID: 8300000, guid: 7c9ae26e503d32d44a33529097e40f2c, type: 3}
   failBeepSounds:
   - {fileID: 8300000, guid: 54da21910d7ea4a468455b1bac8125a7, type: 3}
   - {fileID: 8300000, guid: df4bc684644204b4fbece2dfa2c4bae4, type: 3}
