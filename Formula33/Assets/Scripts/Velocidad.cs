@@ -67,14 +67,15 @@ public class Velocidad : MonoBehaviour
         {
             barra.value -= velocidadBajada * Time.deltaTime;
         }
-        else
+        /*else
         {
             barra.value += velocidadSubida * Time.deltaTime;
-        }
+        }*/
         if (!secondPlayer)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
+                barra.value += velocidadSubida;
                 timerToFall = timeToFall;
             }
         }
@@ -82,6 +83,7 @@ public class Velocidad : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                barra.value += velocidadSubida;
                 timerToFall = timeToFall;
             }
         }

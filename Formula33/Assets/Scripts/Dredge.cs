@@ -33,6 +33,9 @@ public class Dredge : MonoBehaviour
 
     public int adaptableDifficulty = 0;
 
+    public AudioSource audioSource;
+    public List<AudioClip> dredgeSounds;
+
     void Start()
     {
         puntuacion = 0;
@@ -76,6 +79,7 @@ public class Dredge : MonoBehaviour
                     puntuacion++;
                     velocidadRotacion *= speedMultiplier;
                     bmovil.quitarChoclo();
+                    PlayDredgeSound();
                     if (puntuacion >= maxpuntuacion)
                     {
                         WinGame();
@@ -92,6 +96,7 @@ public class Dredge : MonoBehaviour
                     puntuacion++;
                     velocidadRotacion *= speedMultiplier;
                     bmovil.quitarChoclo();
+                    PlayDredgeSound();
                     if (puntuacion >= maxpuntuacion)
                     {
                         WinGame();
@@ -100,6 +105,15 @@ public class Dredge : MonoBehaviour
             }
         }
         
+    }
+
+    public void PlayDredgeSound()
+    {
+        /*
+        int i = Random.Range(0, dredgeSounds.Count);
+        audioSource.clip = dredgeSounds[i];
+        audioSource.Play();
+        */
     }
     void WinGame()
     {
