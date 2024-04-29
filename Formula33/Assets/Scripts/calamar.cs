@@ -15,16 +15,16 @@ public class calamar : MonoBehaviour
     public bool canUseOil;
     public GameObject oil;
 
-    public float timerReplenish = 45.0f;
+    public float baseTimerReplenish = 25.0f;
+    private float timerReplenish;
 
-    public bool replenish = false;
-    
     // Start is called before the first frame update
     void Start()
     {
         tinta.color = colorTransparente;
         tintaTimer = 0;
         canUseOil = true;
+        timerReplenish = baseTimerReplenish;
     }
 
     // Update is called once per frame
@@ -32,9 +32,9 @@ public class calamar : MonoBehaviour
     {
         timerReplenish -= Time.deltaTime;
 
-        if(timerReplenish <= 0 && !replenish)
+        if(timerReplenish <= 0)
         {
-            replenish = true;
+            timerReplenish = baseTimerReplenish;
             canUseOil = true;
         }
 
